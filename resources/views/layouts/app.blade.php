@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="{{ url('assets/css/tiny-slider.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/aos.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/glightbox.min.css') }}">
-	<link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ url('assets/css/style2.css') }}">
 
 	<link rel="stylesheet" href="{{ url('assets/css/flatpickr.min.css') }}">
 
