@@ -1,5 +1,4 @@
-<script>
-    var tns = (function (){
+var tns = (function (){
   var win = window;
 
   var raf = win.requestAnimationFrame
@@ -3207,4 +3206,3 @@ function getImageArray (start, end, imgSelector) {
 
 return tns;
 })();
-</script>

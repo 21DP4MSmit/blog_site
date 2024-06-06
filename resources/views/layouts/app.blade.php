@@ -17,17 +17,17 @@
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-	<link rel="stylesheet" href="assets/vendor/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="assets/vendor/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="resources/fonts/icomoon/style.css">
+	<link rel="stylesheet" href="resources/fonts/flaticon/font/flaticon.css">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<link rel="stylesheet" href="assets/vendor/css/tiny-slider.css">
-	<link rel="stylesheet" href="assets/vendor/css/aos.css">
-	<link rel="stylesheet" href="assets/vendor/css/glightbox.min.css">
-	<link rel="stylesheet" href="assets/vendor/css/style.css">
+	<link rel="stylesheet" href="resources/css/tiny-slider.css">
+	<link rel="stylesheet" href="resources/css/aos.css">
+	<link rel="stylesheet" href="resources/css/glightbox.min.css">
+	<link rel="stylesheet" href="resources/css/style.css">
 
-	<link rel="stylesheet" href="assets/vendor/css/flatpickr.min.css">
+	<link rel="stylesheet" href="resources/css/flatpickr.min.css">
 
     @yield('style')
 </head>
@@ -49,15 +49,15 @@
     </div>
 
 
-    <script src="{{ url('assets/vendor/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/tiny-slider.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/flatpickr.min.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/aos.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/glightbox.min.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/navbar.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/counter.js') }}"></script>
-    <script src="{{ url('assets/vendor/js/custom.js') }}"></script>
-	<script src="{{ url('assets/js/main.js') }}"></script>
+    <script src="{{ url('resources/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('resources/js/tiny-slider.js') }}"></script>
+    <script src="{{ url('resources/js/flatpickr.min.js') }}"></script>
+    <script src="{{ url('resources/js/aos.js') }}"></script>
+    <script src="{{ url('resources/js/glightbox.min.js') }}"></script>
+    <script src="{{ url('resources/js/navbar.js') }}"></script>
+    <script src="{{ url('resources/js/counter.js') }}"></script>
+    <script src="{{ url('resources/js/custom.js') }}"></script>
+	<script src="{{ url('resources/js/main.js') }}"></script>
     @yield('script')
 </body>
 </html>
