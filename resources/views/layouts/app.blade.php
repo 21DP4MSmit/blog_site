@@ -16,16 +16,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ url('css/icomoon/style.css') }}">
-    <link rel="stylesheet" href="{{ url('css/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/flaticon/font/flaticon.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="{{ url('css/tiny-slider.css') }}">
-    <link rel="stylesheet" href="{{ url('css/aos.css') }}">
-    <link rel="stylesheet" href="{{ url('css/glightbox.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/style2.css') }}">
-    <link rel="stylesheet" href="{{ url('css/flatpickr.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/tiny-slider.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/glightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/style2.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/flatpickr.min.css') }}">
 
     @yield('style')
 </head>
@@ -45,15 +45,15 @@
         </div>
     </div>
 
-    <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url('js/tiny-slider.js') }}"></script>
-    <script src="{{ url('js/flatpickr.min.js') }}"></script>
-    <script src="{{ url('js/aos.js') }}"></script>
-    <script src="{{ url('js/glightbox.min.js') }}"></script>
-    <script src="{{ url('js/navbar.js') }}"></script>
-    <script src="{{ url('js/counter.js') }}"></script>
-    <script src="{{ url('js/custom.js') }}"></script>
-    <script src="{{ url('js/main.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/tiny-slider.js') }}"></script>
+    <script src="{{ url('assets/js/flatpickr.min.js') }}"></script>
+    <script src="{{ url('assets/js/aos.js') }}"></script>
+    <script src="{{ url('assets/js/glightbox.min.js') }}"></script>
+    <script src="{{ url('assets/js/navbar.js') }}"></script>
+    <script src="{{ url('assets/js/counter.js') }}"></script>
+    <script src="{{ url('assets/js/custom.js') }}"></script>
+    <script src="{{ url('assets/js/main.js') }}"></script>
     @yield('script')
 </body>
 </html>
