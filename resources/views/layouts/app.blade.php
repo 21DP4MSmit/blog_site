@@ -17,22 +17,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-	<link rel="stylesheet" href="url('front/fonts/icomoon/style.css') ">
+	<link rel="stylesheet" href="{{ url('front/fonts/icomoon/style.css') }}">
 	<link rel="stylesheet" href="{{ url('front/fonts/flaticon/font/flaticon.css') }}">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<!-- <link rel="stylesheet" href="/assets/css/tiny-slider.css"> -->
-	@include('tiny-slider')
-	<!-- <link rel="stylesheet" href="/assets/css/aos.css"> -->
-	@include('aos')
-	<!-- <link rel="stylesheet" href="/assets/css/glightbox.min.css"> -->
-	@include('min')
-	<!-- <link rel="stylesheet" href="/assets/css/style2.css"> -->
-	@include('style')
-
-	<!-- <link rel="stylesheet" href="/assets/css/flatpickr.min.css"> -->
-	@include('flatpickr.min')
+	<link rel="stylesheet" href="/assets/css/tiny-slider.css">
+	<link rel="stylesheet" href="/assets/css/aos.css">
+	<link rel="stylesheet" href="/assets/css/glightbox.min.css">
+	<link rel="stylesheet" href="/assets/css/style2.css">
+	<link rel="stylesheet" href="/assets/css/flatpickr.min.css">
 
     @yield('style')
 </head>
@@ -54,22 +48,14 @@
     </div>
 
 
-    <!-- <script src="/assets/js/bootstrap.bundle.min.js"></script> -->
-	@include('bootstrap.bundle.min')
-    <!-- <script src="/assets/js/tiny-slider.js"></script> -->
-	@include('tiny-slider')
-    <!-- <script src="/assets/js/flatpickr.min.js"></script> -->
-	@include('flatpickr.min')
-    <!-- <script src="/assets/js/aos.js"></script> -->
-	@include('aos')
-    <!-- <script src="/assets/js/glightbox.min.js"></script> -->
-	@include('glightbox.min')
-    <!-- <script src="/assets/js/navbar.js"></script> -->
-	@include('navbar')
-    <!-- <script src="/assets/js/counter.js"></script> -->
-	@include('counter')
-    <!-- <script src="/assets/js/custom.js"></script> -->
-	@include('custom')
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/tiny-slider.js"></script>
+    <script src="/assets/js/flatpickr.min.js"></script>
+    <script src="/assets/js/aos.js"></script>
+    <script src="/assets/js/glightbox.min.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/counter.js"></script>
+    <script src="/assets/js/custom.js"></script>
 	<script src="/assets/js/main.js"></script>
     @yield('script')
 </body>
