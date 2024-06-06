@@ -19,7 +19,7 @@
                         <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                             <li><a href="{{ url('') }}">Home</a></li>
                             @foreach($getCategoryHeader as $CategoryHeader)
-                                <li><a href="{{ url($CategoryHeader->slug) }}">{{ $CategoryHeader->name }}</a></li>
+                                <li><a href="{{ url($CategoryHeader->slug) }}">{{ $CategoryHeader->title }}</a></li>
                             @endforeach
                             <li><a href="{{ url('review') }}">Blogs</a></li>
                         </ul>
