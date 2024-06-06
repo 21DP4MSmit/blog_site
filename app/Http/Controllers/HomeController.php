@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function review()
     {
         $data['getRecord'] = ReviewModel::getRecordFront();
-        $data['meta_title'] = 'Reviews';
+        $data['meta_title'] = 'Blogs';
         $data['getCategory'] = CategoryModel::getCategory();
         return view('review', $data);
     }
