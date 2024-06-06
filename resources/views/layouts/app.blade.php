@@ -17,17 +17,22 @@
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-	<link rel="stylesheet" href="/assets/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="/assets/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="url('front/fonts/icomoon/style.css') ">
+	<link rel="stylesheet" href="{{ url('front/fonts/flaticon/font/flaticon.css') }}">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<link rel="stylesheet" href="/assets/css/tiny-slider.css">
-	<link rel="stylesheet" href="/assets/css/aos.css">
-	<link rel="stylesheet" href="/assets/css/glightbox.min.css">
-	<link rel="stylesheet" href="/assets/css/style2.css">
+	<!-- <link rel="stylesheet" href="/assets/css/tiny-slider.css"> -->
+	@include('resources\css\tiny-slider.blade.php')
+	<!-- <link rel="stylesheet" href="/assets/css/aos.css"> -->
+	@include('resources\css\aos.blade.php')
+	<!-- <link rel="stylesheet" href="/assets/css/glightbox.min.css"> -->
+	@include('resources\css\glightbox.min.blade.php')
+	<!-- <link rel="stylesheet" href="/assets/css/style2.css"> -->
+	@include('resources\css\style.blade.php')
 
-	<link rel="stylesheet" href="/assets/css/flatpickr.min.css">
+	<!-- <link rel="stylesheet" href="/assets/css/flatpickr.min.css"> -->
+	@include('resources\css\flatpickr.min.blade.php')
 
     @yield('style')
 </head>
@@ -49,14 +54,22 @@
     </div>
 
 
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/tiny-slider.js"></script>
-    <script src="/assets/js/flatpickr.min.js"></script>
-    <script src="/assets/js/aos.js"></script>
-    <script src="/assets/js/glightbox.min.js"></script>
-    <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/counter.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <!-- <script src="/assets/js/bootstrap.bundle.min.js"></script> -->
+	@include('resources\js\bootstrap.bundle.min.blade.php')
+    <!-- <script src="/assets/js/tiny-slider.js"></script> -->
+	@include('resources\js\tiny-slider.blade.php')
+    <!-- <script src="/assets/js/flatpickr.min.js"></script> -->
+	@include('resources\js\flatpickr.min.blade.php')
+    <!-- <script src="/assets/js/aos.js"></script> -->
+	@include('resources\js\aos.blade.php')
+    <!-- <script src="/assets/js/glightbox.min.js"></script> -->
+	@include('resources\js\glightbox.min.blade.php')
+    <!-- <script src="/assets/js/navbar.js"></script> -->
+	@include('resources\js\navbar.blade.php')
+    <!-- <script src="/assets/js/counter.js"></script> -->
+	@include('resources\js\counter.blade.php')
+    <!-- <script src="/assets/js/custom.js"></script> -->
+	@include('resources\js\custom.blade.php')
 	<script src="/assets/js/main.js"></script>
     @yield('script')
 </body>
