@@ -49,15 +49,15 @@
     </div>
 
 
-    <script src="{{ url('front/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url('front/js/tiny-slider.js') }}"></script>
-    <script src="{{ url('front/js/flatpickr.min.js') }}"></script>
-    <script src="{{ url('front/js/aos.js') }}"></script>
-    <script src="{{ url('front/js/glightbox.min.js') }}"></script>
-    <script src="{{ url('front/js/navbar.js') }}"></script>
-    <script src="{{ url('front/js/counter.js') }}"></script>
-    <script src="{{ url('front/js/custom.js') }}"></script>
-	<script src="{{ url('assets/js/main.js') }}"></script>
+    <script src="{{ asset('front/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('front/js/tiny-slider.js') }}"></script>
+    <script src="{{ asset('front/js/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('front/js/aos.js') }}"></script>
+    <script src="{{ asset('front/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('front/js/navbar.js') }}"></script>
+    <script src="{{ asset('front/js/counter.js') }}"></script>
+    <script src="{{ asset('front/js/custom.js') }}"></script>
+	<script src="{{ asset('assets/js/main.js') }}"></script>
     @yield('script')
 </body>
 </html>
