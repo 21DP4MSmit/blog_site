@@ -23,16 +23,16 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 	<!-- <link rel="stylesheet" href="/assets/css/tiny-slider.css"> -->
-	@include('resources.css.tiny-slider')
+	@include('tiny-slider')
 	<!-- <link rel="stylesheet" href="/assets/css/aos.css"> -->
-	@include('resources.css.aos')
+	@include('aos')
 	<!-- <link rel="stylesheet" href="/assets/css/glightbox.min.css"> -->
-	@include('resources.css.glightbox.min')
+	@include('min')
 	<!-- <link rel="stylesheet" href="/assets/css/style2.css"> -->
-	@include('resources/css/style')
+	@include('style')
 
 	<!-- <link rel="stylesheet" href="/assets/css/flatpickr.min.css"> -->
-	@include('resources.css.flatpickr.min')
+	@include('flatpickr.min')
 
     @yield('style')
 </head>
@@ -55,21 +55,21 @@
 
 
     <!-- <script src="/assets/js/bootstrap.bundle.min.js"></script> -->
-	@include('resources.js.bootstrap.bundle.min')
+	@include('bootstrap.bundle.min')
     <!-- <script src="/assets/js/tiny-slider.js"></script> -->
-	@include('resources.js.tiny-slider')
+	@include('tiny-slider')
     <!-- <script src="/assets/js/flatpickr.min.js"></script> -->
-	@include('resources.js.flatpickr.min')
+	@include('flatpickr.min')
     <!-- <script src="/assets/js/aos.js"></script> -->
-	@include('resources.js.aos')
+	@include('aos')
     <!-- <script src="/assets/js/glightbox.min.js"></script> -->
-	@include('resources.js.glightbox.min')
+	@include('glightbox.min')
     <!-- <script src="/assets/js/navbar.js"></script> -->
-	@include('resources.js.navbar')
+	@include('navbar')
     <!-- <script src="/assets/js/counter.js"></script> -->
-	@include('resources.js.counter')
+	@include('counter')
     <!-- <script src="/assets/js/custom.js"></script> -->
-	@include('resources.js.custom')
+	@include('custom')
 	<script src="/assets/js/main.js"></script>
     @yield('script')
 </body>
