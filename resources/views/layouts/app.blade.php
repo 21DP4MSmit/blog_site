@@ -23,16 +23,16 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 	<!-- <link rel="stylesheet" href="/assets/css/tiny-slider.css"> -->
-	@include('resources.css.tiny-slider.blade.php')
+	@include('resources.css.tiny-slider')
 	<!-- <link rel="stylesheet" href="/assets/css/aos.css"> -->
-	@include('resources.css.aos.blade.php')
+	@include('resources.css.aos')
 	<!-- <link rel="stylesheet" href="/assets/css/glightbox.min.css"> -->
-	@include('resources.css.glightbox.min.blade.php')
+	@include('resources.css.glightbox.min')
 	<!-- <link rel="stylesheet" href="/assets/css/style2.css"> -->
-	@include('resources/css/style.blade.php')
+	@include('resources/css/style')
 
 	<!-- <link rel="stylesheet" href="/assets/css/flatpickr.min.css"> -->
-	@include('resources.css.flatpickr.min.blade.php')
+	@include('resources.css.flatpickr.min')
 
     @yield('style')
 </head>
@@ -55,21 +55,21 @@
 
 
     <!-- <script src="/assets/js/bootstrap.bundle.min.js"></script> -->
-	@include('resources.js.bootstrap.bundle.min.blade.php')
+	@include('resources.js.bootstrap.bundle.min')
     <!-- <script src="/assets/js/tiny-slider.js"></script> -->
-	@include('resources.js.tiny-slider.blade.php')
+	@include('resources.js.tiny-slider')
     <!-- <script src="/assets/js/flatpickr.min.js"></script> -->
-	@include('resources.js.flatpickr.min.blade.php')
+	@include('resources.js.flatpickr.min')
     <!-- <script src="/assets/js/aos.js"></script> -->
-	@include('resources.js.aos.blade.php')
+	@include('resources.js.aos')
     <!-- <script src="/assets/js/glightbox.min.js"></script> -->
-	@include('resources.js.glightbox.min.blade.php')
+	@include('resources.js.glightbox.min')
     <!-- <script src="/assets/js/navbar.js"></script> -->
-	@include('resources.js.navbar.blade.php')
+	@include('resources.js.navbar')
     <!-- <script src="/assets/js/counter.js"></script> -->
-	@include('resources.js.counter.blade.php')
+	@include('resources.js.counter')
     <!-- <script src="/assets/js/custom.js"></script> -->
-	@include('resources.js.custom.blade.php')
+	@include('resources.js.custom')
 	<script src="/assets/js/main.js"></script>
     @yield('script')
 </body>
