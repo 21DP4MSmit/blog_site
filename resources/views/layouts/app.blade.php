@@ -17,17 +17,17 @@
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-	<link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="assets/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="{{ url('assets/fonts/icomoon/style.css') }}">
+	<link rel="stylesheet" href="{{ url('assets/fonts/flaticon/font/flaticon.css') }}">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<link rel="stylesheet" href="assets/css/tiny-slider.css">
-	<link rel="stylesheet" href="assets/css/aos.css">
-	<link rel="stylesheet" href="assets/css/glightbox.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="{{ url('assets/css/tiny-slider.css') }}">
+	<link rel="stylesheet" href="{{ url('assets/css/aos.css') }}">
+	<link rel="stylesheet" href="{{ url('assets/css/glightbox.min.css') }}">
+	<link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
 
-	<link rel="stylesheet" href="assets/css/flatpickr.min.css">
+	<link rel="stylesheet" href="{{ url('assets/css/flatpickr.min.css') }}">
 
     @yield('style')
 </head>
