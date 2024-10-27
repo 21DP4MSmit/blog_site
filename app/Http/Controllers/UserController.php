@@ -7,6 +7,7 @@ use App\Models\User;
 use Auth;
 use Hash;
 use Str;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -16,26 +17,25 @@ class UserController extends Controller
         return view('backend.user.list', $data);
     }
 
-    public function add_user(Request $request)
+    public function add_user()
     {
         return view('backend.user.add');
     }
 
     public function insert_user(Request $request)
     {
-
-        request()->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required'
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|min:8|regex:/[A-Za-z]/|regex:/[0-9]/',
         ]);
 
-        $save = new User;
-        $save->name     = trim($request->name);
-        $save->email    = trim($request->email);
-        $save->password = Hash::make($request->password);
-        $save->status   = trim($request->status);
-        $save->save();
+        User::create([
+            'name' => trim($request->name),
+            'email' => trim($request->email),
+            'password' => Hash::make($request->password),
+            'status' => trim($request->status),
+        ]);
 
         return redirect('panel/user/list')->with('success', "User successfully created");
     }
@@ -48,32 +48,30 @@ class UserController extends Controller
 
     public function update_user($id, Request $request)
     {
-
-        request()->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'password' => 'nullable|min:8|regex:/[A-Za-z]/|regex:/[0-9]/',
         ]);
 
-        $save = User::getSingle($id);
-        $save->name     = trim($request->name);
-        $save->email    = trim($request->email);
-        
-        if(!empty($request->password))
-        {
-            $save->password = Hash::make($request->password);
+        $user = User::getSingle($id);
+        $user->name = trim($request->name);
+        $user->email = trim($request->email);
+
+        if (!empty($request->password)) {
+            $user->password = Hash::make($request->password);
         }
 
-        $save->status   = trim($request->status);
-        $save->save();
+        $user->status = trim($request->status);
+        $user->save();
 
         return redirect('panel/user/list')->with('success', "User successfully updated");
     }
 
     public function delete_user($id)
     {
-        $save = User::getSingle($id);
-        $save->is_delete = 1;
-        $save->save();
+        $user = User::getSingle($id);
+        $user->delete();
 
         return redirect()->back()->with('success', "User successfully deleted");
     } 
@@ -85,54 +83,49 @@ class UserController extends Controller
 
     public function UpdatePassword(Request $request)
     {
-        $user = User::getSingle(Auth::user()->id);
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|min:8|regex:/[A-Za-z]/|regex:/[0-9]/|confirmed',
+        ]);
 
-        if(Hash::check($request->old_password, $user->password))
-        {
-            if($request->new_password == $request->confirm_password)
-            {
-                $user->password = Hash::make($request->new_password);
-                $user->save();
+        $user = Auth::user();
 
-                return redirect()->back()->with('success', 'Your Password has successfully updated');
-            }
-            else
-            {
-                return redirect()->back()->with('error', 'Confirm Password does not match New Password');
-            }
-        }
-        else
-        {
+        if (Hash::check($request->old_password, $user->password)) {
+            $user->password = Hash::make($request->new_password);
+            $user->save();
+
+            return redirect()->back()->with('success', 'Your Password has been successfully updated');
+        } else {
             return redirect()->back()->with('error', 'Old password does not match');
         }
     }
 
     public function AccountSettings()
     {
-        $data['getUser'] = User::getSingle(Auth::user()->id);
+        $data['getUser'] = Auth::user();
         return view('backend.profile.account_settings', $data);
     }
 
     public function UpdateAccountSettings(Request $request)
     {
-        $getUser = User::getSingle(Auth::user()->id);
-        $getUser->name = $request->name;
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        if(!empty($request->file('profile_picture')))
-        {
-            if(!empty($getUser->profile_picture) && file_exists('upload/profile/'.$getUser->profile_picture))
-            {
-                unlink('upload/profile/'.$getUser->profile_picture);
+        $user = Auth::user();
+        $user->name = $request->name;
+
+        if ($request->hasFile('profile_picture')) {
+            if ($user->profile_picture && Storage::disk('public')->exists($user->profile_picture)) {
+                Storage::disk('public')->delete($user->profile_picture);
             }
 
-            $ext = $request->file('profile_picture')->getClientOriginalExtension();
-            $file = $request->file('profile_picture');
-            $filename = Str::random(20).'.'.$ext;
-            $file->move('upload/profile/', $filename);
-            $getUser->profile_picture = $filename;
+            $path = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $user->profile_picture = $path;
         }
 
-        $getUser->save();
+        $user->save();
 
         return redirect()->back()->with('success', "Profile successfully updated");
     }
