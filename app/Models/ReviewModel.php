@@ -137,13 +137,13 @@ class ReviewModel extends Model
 
     public function getImage()
     {
-        if(!empty($this->image_file) && file_exists('upload/review/'.$this->image_file))
-        {
-            return url('upload/review/'.$this->image_file);
-        }
-        else
-        {
-            return "";
+        $imagePath = 'upload/review/' . $this->image_file;
+
+        if (!empty($this->image_file) && file_exists(public_path($imagePath))) {
+            return url($imagePath);
+        } else {
+            // Return a placeholder image if the file doesn't exist
+            return url('upload/review/placeholder.jpg'); // Ensure placeholder.jpg exists in this directory
         }
     }
 

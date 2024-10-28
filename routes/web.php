@@ -25,7 +25,7 @@ Route::get('review', [HomeController::class, 'review']);
 
 
 Route::get('login', [AuthController::class, 'login']);
-Route::post('login', [AuthController::class, 'auth_login']);
+Route::middleware('throttle:5,1')->post('/login', [AuthController::class, 'login']); // to protect against brute-force attacks applied rate limiting to the /login
 
 
 Route::get('register', [AuthController::class, 'register']);
@@ -33,7 +33,7 @@ Route::post('register', [AuthController::class, 'create_user']);
 Route::get('verify/{token}', [AuthController::class, 'verify']);
 
 Route::get('forgot-password', [AuthController::class, 'forgot']);
-Route::post('forgot-password', [AuthController::class, 'forgot_password']);
+Route::middleware('throttle:5,1')->post('/forgot-password', [AuthController::class, 'forgotPassword']); // to protect against brute-force attacks applied rate limiting to the /forgot-password
 
 Route::get('reset/{token}', [AuthController::class, 'reset']);
 Route::post('reset/{token}', [AuthController::class, 'post_reset']);

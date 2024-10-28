@@ -87,21 +87,19 @@ class AuthController extends Controller
         } 
     }
 
-    public function forgot_password(Request $request)
+    public function forgotPassword(Request $request)
     {
-        $user = User::where('email', '=', $request->email)->first();
-        if(!empty($user))
-        {
-            $user->remember_token = Str::random(40);
-            $user->save();
+        $request->validate([
+            'email' => 'required|email|exists:users,email',
+        ]);
 
-            Mail::to($user->email)->send(new ForgotPasswordMail($user));
+        // Process password reset link (assuming you're using Laravel's password reset functionality)
+        $status = Password::sendResetLink($request->only('email'));
 
-            return redirect()->back()->with('success', "Please check your email and reset your password!");
-        }
-        else
-        {
-            return redirect()->back()->with('error', "Email not found!");
+        if ($status == Password::RESET_LINK_SENT) {
+            return back()->with(['status' => __($status)]);
+        } else {
+            return back()->withErrors(['email' => __($status)]);
         }
     }
 

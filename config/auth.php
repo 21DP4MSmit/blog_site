@@ -112,4 +112,7 @@ return [
 
     'password_timeout' => 10800,
 
+    // MFA is recommended for secure access to admin areas.
+    // Recommendation: Enforce strong password complexity in the UserController
+    // Optionally, implement account lockout after a number of failed attempts to prevent brute-force attacks.
 ];

@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => env('SESSION_DRIVER', 'redis'), // added redis instead of file as a secure default for production
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +168,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', true), //Enabled SESSION_SECURE_COOKIE by setting secure to true, which ensures session cookies are only sent over HTTPS
 
     /*
     |--------------------------------------------------------------------------

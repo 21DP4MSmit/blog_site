@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false), // Set APP_DEBUG=false to ensure debug mode is disabled by default.
 
     /*
     |--------------------------------------------------------------------------
@@ -211,5 +211,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
+    
+    // Security Recommendations:
+    // - Consider adding middleware for HTTP security headers, such as CSP and X-Frame-Options, in the middleware stack.
+    // - For sensitive data, ensure encryption is enabled both in transit (HTTPS) and at rest where possible.
 
 ];

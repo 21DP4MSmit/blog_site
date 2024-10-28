@@ -8,11 +8,11 @@
       <div class="row align-items-center justify-content-center text-center pt-5">
         <div class="col-lg-6">
           <h1 class="heading text-white mb-3" data-aos="fade-up">
-            @if(!empty($header_title))
-            {{ $header_title }}
-            @else
-            Blogs
-            @endif
+          @if(!empty($header_title))
+              {{ $header_title }} <!--{{ $header_title }} for output, protecting against XSS vulnerabilities. -->
+          @else
+              Blogs
+          @endif
           </h1>
         </div>
       </div>

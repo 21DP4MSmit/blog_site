@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'daily'), //  Set to daily in production environments to manage log file sizes by creating a new log file each day
 
     /*
     |--------------------------------------------------------------------------
